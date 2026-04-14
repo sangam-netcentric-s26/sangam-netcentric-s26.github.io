@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sangam Prajapati | Portfolio</title>
+    <style>
+        :root {
+            --primary: #1f3c88;
+            --accent: #2f6fed;
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #5b6472;
+            --border: #dbe3f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 18px;
+            --maxw: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(var(--maxw), calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .site-nav {
+            background: #1f3c88;
+            color: white;
+            padding: 14px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .site-nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .site-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .site-links a,
+        .site-dropbtn {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .site-links a:hover,
+        .site-dropbtn:hover {
+            text-decoration: underline;
+        }
+
+        .site-dropdown {
+            position: relative;
+        }
+
+        .site-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 160px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .site-dropdown-content a {
+            color: #1f2937;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .site-dropdown-content a:hover {
+            background: #eef3ff;
+        }
+
+        .site-dropdown:hover .site-dropdown-content {
+            display: block;
+        }
+
+        .portfolio-header {
+            position: sticky;
+            top: 60px;
+            z-index: 900;
+            background: rgba(245, 247, 251, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(219, 227, 240, 0.8);
+        }
+
+        .portfolio-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 16px;
+        }
+
+        .portfolio-brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-links a {
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .portfolio-links a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn.secondary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 72px 0 48px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .hero-card,
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card {
+            padding: 34px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--muted);
+            margin: 0 0 20px;
+            font-size: 1.02rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+        }
+
+        .quick-info {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .info-pill {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px;
+            background: #fafcff;
+        }
+
+        .info-pill strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .hero-photo {
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            padding: 22px;
+            background: linear-gradient(135deg, #eef3ff, #ffffff);
+            border: 1px solid black;
+            color: var(--muted);
+        }
+
+        section {
+            padding: 20px 0 12px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 0 0 16px;
+        }
+
+        .section-subtext {
+            color: var(--muted);
+            margin: 0 0 22px;
+        }
+
+        .about-grid,
+        .skills-grid,
+        .projects-grid,
+        .gallery-grid,
+        .contact-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1.1fr 0.9fr;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .projects-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .card {
+            padding: 24px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .tag-list li {
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: #eef3ff;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .timeline-item {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .timeline-meta {
+            color: var(--muted);
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .project-image {
+            aspect-ratio: 16 / 9;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #edf2ff, #ffffff);
+            border: 1px solid black;
+            padding: 18px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            font-weight: 700;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4 / 3;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #edf2ff, #ffffff);
+            border: 1px solid black;
+            padding: 16px;
+        }
+
+        .side-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1f3c88;
+            color: white;
+            text-decoration: none;
+            font-size: 28px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            z-index: 999;
+            transition: 0.2s;
+        }
+
+        .side-arrow:hover {
+            background: #2f6fed;
+        }
+
+        .side-arrow.left {
+            left: 15px;
+        }
+
+        .side-arrow.right {
+            right: 15px;
+        }
+
+        footer {
+            padding: 36px 0 50px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .about-grid,
+            .skills-grid,
+            .projects-grid,
+            .gallery-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .site-nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .site-links {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .portfolio-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-card,
+            .card {
+                padding: 20px;
+            }
+
+            .timeline-top {
+                flex-direction: column;
+            }
+
+            .portfolio-header {
+                top: 86px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="site-nav">
+        <div class="site-nav-container">
+            <div class="site-brand">Sangam Prajapati</div>
+
+            <div class="site-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About Me</a>
+
+                <div class="site-dropdown">
+                    <button class="site-dropbtn">&#9776;</button>
+                    <div class="site-dropdown-content">
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="resume.html">Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="portfolio-header">
+        <div class="container portfolio-nav">
+            <div class="portfolio-brand">Sangam Prajapati</div>
+            <nav class="portfolio-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <a href="resume.html" class="side-arrow left">&#10094;</a>
+    <a href="resume.html" class="side-arrow right">&#10095;</a>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-card">
+                    <span class="eyebrow">Portfolio</span>
+                    <h1>Computer Science Student Building Practical, Clean, and Reliable Solutions</h1>
+                    <p>
+                        I’m Sangam Prajapati, a Computer Science student at Seattle Pacific University with experience
+                        in C++,
+                        Java, Python, web development, and problem solving through hands-on projects. I enjoy building
+                        systems
+                        that are clear, efficient, and useful.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="#projects">View Projects</a>
+                        <a class="btn secondary" href="#contact">Contact Me</a>
+                    </div>
+                    <div class="quick-info">
+                        <div class="info-pill">
+                            <strong>Location</strong>
+                            Seattle, WA
+                        </div>
+                        <div class="info-pill">
+                            <strong>Education</strong>
+                            SPU, B.S. Computer Science
+                        </div>
+                        <div class="info-pill">
+                            <strong>Focus</strong>
+                            Software Development & Problem Solving
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-photo card">
+                    <div>
+                        <img src="Pictures/linkedIn_profil.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+
+                <div class="about-grid">
+                    <div class="card">
+                        <h3>My Background</h3>
+                        <p>
+                            I am currently pursuing a Bachelor of Science in Computer Science at Seattle Pacific
+                            University.
+                            My work so far has focused on object-oriented programming, data structures, debugging,
+                            memory-safe
+                            coding practices, and building projects that pass strict test requirements.
+                        </p>
+                        <p>
+                            Beyond coursework, I have also supported students and families through my role in Student
+                            Financial
+                            Services, where I developed communication, organization, and detail-oriented problem-solving
+                            skills.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Highlights</h3>
+                        <ul class="tag-list">
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>React</li>
+                            <li>HTML/CSS</li>
+                            <li>Data Structures</li>
+                            <li>Debugging</li>
+                            <li>Valgrind</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="card">
+                    <div class="timeline-item">
+                        <div class="timeline-top">
+                            <span>Student Financial Service Associate</span>
+                            <span>3/2025 – Present</span>
+                        </div>
+                        <div class="timeline-meta">Seattle Pacific University · Seattle, WA</div>
+                        <p>
+                            Assist students and families with financial aid and account inquiries, handle high weekly
+                            communication
+                            volume, process payments and scholarships accurately, and reconcile accounts against
+                            reports.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-top">
+                            <span>SEO &amp; Digital Marketing Intern</span>
+                            <span>6/2024 – 9/2024</span>
+                        </div>
+                        <div class="timeline-meta">Cimplesoft · Seattle, WA</div>
+                        <p>
+                            Improved online visibility, supported targeted campaigns, refined keywords, and contributed
+                            to organic
+                            traffic growth through SEO-focused work.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-top">
+                            <span>Leadership &amp; Community Involvement</span>
+                            <span>Various</span>
+                        </div>
+                        <div class="timeline-meta">Orientation Leader · Rotaract Volunteer · Soccer Team Captain</div>
+                        <p>
+                            Worked in leadership, mentoring, logistics, and team coordination roles across campus,
+                            community, and sports settings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtext">
+                    These are portfolio cards built from your resume projects. Replace placeholder links and images
+                    later.
+                </p>
+                <div class="projects-grid">
+                    <article class="card project-card">
+                        <div class="project-image"><img src="Pictures/polonomial.png">
+                        </div>
+                        <div>
+                            <h3>Polynomial Class Implementation</h3>
+                            <p>
+                                Built a dynamic C++ polynomial class with 15+ operations using operator overloading,
+                                Rule of Three,
+                                and modular object-oriented design.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="project-image"><img src="Pictures/list.png">
+                        </div>
+                        <div>
+                            <h3>ADT List Implementations</h3>
+                            <p>
+                                Implemented multiple list-based data structures in C++ with strong test performance,
+                                pointer safety,
+                                and clean modular organization.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="project-image"><img src="Pictures/postfix.png">
+                        </div>
+                        <div>
+                            <h3>Postfix Expression Evaluator</h3>
+                            <p>
+                                Created a postfix evaluator supporting integers, floating-point values, and advanced
+                                operators with
+                                solid input validation.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card project-card">
+                        <div class="project-image"><img src="Pictures/bible.png">
+                        </div>
+                        <div>
+                            <h3>Bible Book Tree Builder</h3>
+                            <p>
+                                Designed a hierarchical data structure for books, chapters, and verses with structured
+                                queries,
+                                traversal, and generated HTML output.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <h2 class="section-title">Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="Pictures/linkedIn_profil.png"></div>
+                    <div class="gallery-item"><img src="Pictures/postfix.png"></div>
+                    <div class="gallery-item"><img src="Pictures/bible.png"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-grid">
+                    <div class="card">
+                        <h3>Let’s Connect</h3>
+                        <p><a href="https://www.linkedin.com/in/prajapati-sangam/" target="_blank">
+                                <img src="Pictures/linkedIn_logo.jpg" alt="LinkedIn" class="icon">
+                                LinkedIn</a></p>
+                        <p><a href="https://github.com/sangampraz/" target="_blank">
+                                <img src="Pictures/github.png" alt="GitHub" class="icon">
+                                GitHub</a></p>
+                    </div>
+                    <div class="card">
+                        <h3>What I’m Looking For</h3>
+                        <p>
+                            Internship opportunities, software projects, collaborative learning experiences, and chances
+                            to grow
+                            as a developer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2026 Sangam Prajapati
+        </div>
+    </footer>
+</body>
+
+</html>

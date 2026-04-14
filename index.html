@@ -1,70 +1,239 @@
 <!DOCTYPE html>
-<html lang="eng">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width", initial-scale="1.0">
-    <title>My First Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sangam Prajapati | Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        table, th, td {
-            border: 2px solid black;
-        }
-    </style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      min-height: 100vh;
+    }
 
-</head >
+    nav {
+      background: #1f3c88;
+      color: white;
+      padding: 14px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a,
+    .dropbtn {
+      color: white;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #1f2937;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: #eef3ff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-box {
+      max-width: 700px;
+    }
+
+    .hero-box h1 {
+      font-size: 2.8rem;
+      color: #1f3c88;
+      margin-bottom: 16px;
+    }
+
+    .hero-box p {
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-bottom: 28px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .main-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: 0.2s ease;
+    }
+
+    .portfolio-btn {
+      background: #1f3c88;
+      color: white;
+    }
+
+    .resume-btn {
+      background: white;
+      color: #1f3c88;
+      border: 2px solid #1f3c88;
+    }
+
+    .main-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .about-section {
+      padding: 80px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      color: #1f3c88;
+      margin-bottom: 16px;
+    }
+
+    .about-section p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero-box h1 {
+        font-size: 2rem;
+      }
+
+      .nav-container {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
 <body>
-    <header>
-        <h1>Sangam Prajapati</h1>
-        <p><a href="https://www.linkedin.com/in/prajapati-sangam/">LinkedIn</a></p>
-    </header>
 
-    <main>
+  <nav>
+    <div class="nav-container">
+      <div class="brand">Sangam Prajapati</div>
 
-        <section>
-            <h2>About Me</h2>
-            <h3>Career Interests</h3>
-            <p>
-                I'm a Computer Science student at Seattle Pacific University with a strong academic foundation (GPA: 3.89) and hands-on experience in software development, SEO, and financial operations. I thrive at the intersection of problem-solving, technical development, and communication.<br>
-                I'm passionate about full-stack development, scalable systems, and combining technical skill with community impact. Open to internships, projects, or collaborations where I can continue learning and contributing.
-            </p>
-        </section>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#about">About Me</a>
 
-        <section>
-            <h2>CSC classes I have completed</h2>
-        </section>
+        <div class="dropdown">
+          <button class="dropbtn">&#9776;</button>
+          <div class="dropdown-content">
+            <a href="portfolio.html">Portfolio</a>
+            <a href="resume.html">Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-        <table>
-            <caption>CSC Classes</caption>
-            <tr>
-                <th>Quarter</th>
-                <th>Class</th>
-            </tr>
-            <tr>
-                <td rowspan="2">Fall</td>
-                <td>Concepts of Programming Languages</td>
-            </tr>
-            <tr>
-                <td>Database Management</td>
-            </tr>
-            <tr>
-                <td>Winter</td>
-                <td>Algorithm Design</td>
-            </tr>
-            <tr>
-                <td rowspan="2">Spring</td>
-                <td>Netcentric Computing</td>
-            </tr>
-            <tr>
-                <td>Operating Systems</td>
-            </tr>
-        </table>
-    
-    </main>
+  <main>
+    <section class="hero">
+      <div class="hero-box">
+        <h1>Welcome</h1>
+        <p>
+          Hi, I’m Sangam Prajapati. Explore my portfolio and resume using the buttons below.
+        </p>
+
+        <div class="button-group">
+          <a href="portfolio.html" class="main-btn portfolio-btn">Portfolio</a>
+          <a href="resume.html" class="main-btn resume-btn">Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2>About Me</h2>
+      <p>
+        I am a Computer Science student at Seattle Pacific University with interests in software development,
+        problem solving, and building practical projects. This site gives quick access to my portfolio and resume.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sangam Prajapati</p>
+  </footer>
 
 </body>
 </html>
-
-
-

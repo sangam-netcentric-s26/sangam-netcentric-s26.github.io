@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sangam Prajapati Resume</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #222;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #1f3c88;
+            margin-bottom: 8px;
+        }
+
+        .contact {
+            font-size: 15px;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        .contact a {
+            color: #1f3c88;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            color: #1f3c88;
+            border-bottom: 2px solid #1f3c88;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        .entry {
+            margin-bottom: 18px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .sub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-style: italic;
+            color: #555;
+        }
+
+        ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 0px;
+        }
+
+        .side-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1f3c88;
+            color: white;
+            text-decoration: none;
+            font-size: 28px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            z-index: 999;
+            transition: 0.2s;
+        }
+
+        .side-arrow:hover {
+            background: #2f6fed;
+        }
+
+        .side-arrow.left {
+            left: 15px;
+        }
+
+        .side-arrow.right {
+            right: 15px;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #1f3c88;
+            color: white;
+            padding: 14px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* container */
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* name/logo */
+        .brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* links + button */
+        .nav-links a,
+        .dropbtn {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* hover effect */
+        .nav-links a:hover,
+        .dropbtn:hover {
+            text-decoration: underline;
+        }
+
+        /* dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        /* dropdown menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 160px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        /* dropdown items */
+        .dropdown-content a {
+            color: #1f2937;
+            padding: 12px 16px;
+            display: block;
+        }
+
+        /* dropdown hover */
+        .dropdown-content a:hover {
+            background: #eef3ff;
+        }
+
+        /* show dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .skills p,
+        .certificates p {
+            margin: 8px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px;
+                margin: 20px;
+            }
+
+            .entry-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="brand">Sangam Prajapati</div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About Me</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">&#9776;</button>
+                    <div class="dropdown-content">
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="resume.html">Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <a href="portfolio.html" class="side-arrow left">&#10094;</a>
+    <a href="portfolio.html" class="side-arrow right">&#10095;</a>
+
+    <div class="container">
+
+        <header>
+            <h1>Sangam Prajapati</h1>
+            <div class="contact">
+                Seattle, WA <br>
+                <p><a href="https://www.linkedin.com/in/prajapati-sangam/" target="_blank">
+                        <img src="Pictures/linkedIn_logo.jpg" alt="LinkedIn" class="icon">
+                        LinkedIn</a>
+                    |
+                    <a href="https://github.com/sangampraz/" target="_blank">
+                        <img src="Pictures/github.png" alt="GitHub" class="icon">
+                        GitHub</a>
+                </p>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Seattle Pacific University</span>
+                    <span>Seattle, WA</span>
+                </div>
+                <div class="sub-header">
+                    <span>Bachelor of Science in Computer Science, GPA: 3.89/4.00</span>
+                    <span>Expected Graduation: June 2027</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Work Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Seattle Pacific University</span>
+                    <span>Seattle, WA</span>
+                </div>
+                <div class="sub-header">
+                    <span>Student Financial Service Associate</span>
+                    <span>3/2025 – Present</span>
+                </div>
+                <ul>
+                    <li>Assist students and families with financial aid and account inquiries, handling more than 100
+                        calls, visits, and emails weekly.</li>
+                    <li>Process and post payments, checks, and scholarships with 100% accuracy while maintaining
+                        organized records.</li>
+                    <li>Reconciled 50+ accounts monthly by cross-verifying data against Tally reports, ensuring 100%
+                        accuracy.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Cimplesoft</span>
+                    <span>Seattle, WA</span>
+                </div>
+                <div class="sub-header">
+                    <span>SEO &amp; Digital Marketing Intern</span>
+                    <span>6/2024 – 9/2024</span>
+                </div>
+                <ul>
+                    <li>Managed and optimized the restaurant’s business account, boosting online visibility and brand
+                        awareness by 15%.</li>
+                    <li>Launched targeted ad campaigns for the client and refined keywords, increasing click-through
+                        rates by 10%.</li>
+                    <li>Implemented SEO strategies that improved Google ranking and grew organic traffic by 6%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Leadership</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Orientation Leader</span>
+                    <span>Fall 2025</span>
+                </div>
+                <ul>
+                    <li>Guide new students through campus resources, academic policies, and student life to ensure a
+                        smooth transition.</li>
+                    <li>Facilitate orientation sessions for 100+ students, foster peer connections, and address academic
+                        and campus life questions.</li>
+                    <li>Present informative Student Financial Services sessions to 60+ students, covering financial aid,
+                        payment processes, and account management.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Rotaract Club Volunteer, Branch Leader</span>
+                    <span>1/2021 – 7/2021</span>
+                </div>
+                <ul>
+                    <li>Volunteered in rural Nepal at 18, coordinating with local government to deliver resources to
+                        500+ residents.</li>
+                    <li>Coordinated distribution logistics and timelines, ensuring timely delivery of supplies to 10+
+                        remote communities.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>School Soccer Team, Captain</span>
+                    <span>2015 – 2017</span>
+                </div>
+                <ul>
+                    <li>Served as captain for a 25-player youth soccer team, encouraging teamwork, discipline, and
+                        positive communication.</li>
+                    <li>Led team practices and strategies, fostering discipline and respect, winning 2 gold and 1 silver
+                        medals.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Polynomial Class Implementation | C++</span>
+                </div>
+                <ul>
+                    <li>Developed dynamic Polynomial class with 15+ operations, using Rule of Three, operator
+                        overloading, and modular OOP.</li>
+                    <li>Achieved 100% test pass rate, validating accuracy and robustness across all polynomial
+                        operations.</li>
+                    <li>Ensured 0 memory leaks using Valgrind and precise deallocation, improving mathematical
+                        computation.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Abstract Data Type (ADT) List Implementations | C++</span>
+                </div>
+                <ul>
+                    <li>Built 3 data structures, achieving 100% pass rate in 120+ tests via efficient resizing, pointer
+                        safety, and initialization lists.</li>
+                    <li>Maintained error-free memory using Valgrind by leveraging encapsulation, polymorphism, and
+                        modular code organization.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Postfix Expression Evaluator | C++ / STL</span>
+                </div>
+                <ul>
+                    <li>Developed a postfix evaluator for integers, floats, and advanced operators, using STL stack and
+                        modular parsing.</li>
+                    <li>Achieved 100% test pass rate in normal test cases and earned 30% extra credit for floating-point
+                        support.</li>
+                    <li>Reduced runtime errors to 0% by implementing comprehensive input validation for malformed and
+                        unsupported expressions.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span>Bible Book Tree Builder | C++ / Data Structures</span>
+                </div>
+                <ul>
+                    <li>Designed hierarchical Bible tree, passing all 68 tests via pre-order traversal, dynamic memory,
+                        and a structured query engine.</li>
+                    <li>Generated HTML output and enabled cross-chapter verse queries by extending parsing and data
+                        retrieval for 1,000+ verses.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section skills">
+            <h2>Skills</h2>
+            <p><strong>Programming &amp; Development:</strong> C++, Java, C#, Python, JavaScript, TypeScript, React,
+                HTML, CSS, HTTP</p>
+            <p><strong>DevOps &amp; Platforms:</strong> Docker, CI/CD pipelines, REST/GraphQL API design</p>
+        </section>
+
+        <section class="section certificates">
+            <h2>Certificates</h2>
+            <p>Microsoft Full-Stack Developer Professional Certificate via Coursera</p>
+            <p>Introduction to HTML, CSS, &amp; JavaScript via Coursera</p>
+        </section>
+    </div>
+</body>
+
+</html>
